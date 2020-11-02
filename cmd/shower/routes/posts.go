@@ -108,7 +108,7 @@ func DeleteHandler(s *session.Session, rnd render.Render, r *http.Request, param
 	rnd.Redirect("/")
 }
 
-//GetHHandler GetHtmlHandler
+//GetHTMLsHandler GetHtmlHandler
 func GetHTMLHandler(rnd render.Render, r *http.Request) {
 	md := r.FormValue("md")
 	html := utils.ConvertMarkdownToHTML(md)

@@ -5,9 +5,9 @@
         </div>
         <div class="col-xs-8">
 		  {{if $.IsAuthorized}}
-            <h1><a href="/edit/{{$value.Id}}">{{ $value.Title }}</a></h1>
+            <h1><a href="/edit/{{$value.ID}}">{{ $value.Title }}</a></h1>
 		  {{else}}
-            <h1><a href="/view/{{$value.Id}}">{{ $value.Title }}</a></h1>
+            <h1><a href="/view/{{$value.ID}}">{{ $value.Title }}</a></h1>
 		  {{end}}
         </div>
         <div class="col-xs-2">
@@ -17,7 +17,7 @@
         <div class="col-xs-2">
         </div>
         <div class="col-xs-8">
-            {{ $value.ContentHtml | unescape }}
+            {{ $value.ContentHTML | unescape }}
         </div>
         <div class="col-xs-2">
         </div>

@@ -34,7 +34,7 @@ func main() {
 	m.Use(session.Middleware)
 
 	m.Use(render.Renderer(render.Options{
-		Directory:  "/cmd/shower/templates",             // Specify what path to load the templates from.
+		Directory:  "cmd/shower/templates",              // Specify what path to load the templates from.
 		Layout:     "layout",                            // Specify a layout template. Layouts can call {{ yield }} to render the current template.
 		Extensions: []string{".tmpl", ".html"},          // Specify extensions to load for templates.
 		Funcs:      []template.FuncMap{unescapeFuncMap}, // Specify helper function maps for templates to access.
@@ -43,7 +43,7 @@ func main() {
 	}))
 
 	staticOptions := martini.StaticOptions{Prefix: "assets"}
-	m.Use(martini.Static("assets", staticOptions))
+	m.Use(martini.Static("cmd/shower/assets", staticOptions))
 
 	m.Get("/", routes.IndexHandler)
 	m.Get("/login", routes.GetLoginHandler)
