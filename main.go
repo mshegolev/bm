@@ -23,7 +23,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
 	db := mongoSession.DB("blog")
 
 	m := martini.Classic()
@@ -55,7 +54,7 @@ func main() {
 	m.Get("/view/:id", routes.ViewHandler)
 	m.Get("/delete/:id", routes.DeleteHandler)
 	m.Post("/SavePost", routes.SavePostHandler)
-	m.Post("/gethtml", routes.GetHtmlHandler)
+	m.Post("/gethtml", routes.GetHTMLHandler)
 
 	m.Run()
 }

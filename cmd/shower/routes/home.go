@@ -6,10 +6,9 @@ import (
 	"github.com/mshegolev/bm/cmd/stayer/db/documents"
 	"github.com/mshegolev/bm/cmd/stayer/models"
 	"github.com/mshegolev/bm/cmd/stayer/session"
+	"labix.org/v2/mgo"
 
 	"github.com/martini-contrib/render"
-
-	"labix.org/v2/mgo"
 )
 
 // IndexHandler индекс
