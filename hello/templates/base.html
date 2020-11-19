@@ -47,19 +47,20 @@
 <nav class="navbar navbar-default navbar-static-top navbar-inverse">
   <div class="container">
     <ul class="nav navbar-nav">
-      <li class="active">
+      <li class="deactivate">
         <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="navbar-right">
-        <a href="https://devcenter.heroku.com"><span class="glyphicon glyphicon-book"></span> Heroku Dev Center</a>
       </li>
     </ul>
   </div>
 </nav>
 
-{% block content %}{% endblock %}
+{% block content %}
+      {% block main %}
+      {% endblock %}
+{% endblock %}
+
 
 </body>
 </html>
+
+
