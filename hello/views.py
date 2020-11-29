@@ -26,3 +26,7 @@ def db(request):
     greetings = Greeting.objects.all()
 
     return render(request, "db.html", {"greetings": greetings})
+
+@login_required(login_url='/accounts/login/')
+def logout(request):
+    return index(request)
