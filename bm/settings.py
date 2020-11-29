@@ -25,6 +25,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'change me!')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+SECRET_KEY = os.getenv('DEBUG', 'False')
 
 ALLOWED_HOSTS = []
 
@@ -40,6 +41,9 @@ INSTALLED_APPS = [
     "hello",
     'crispy_forms',
     'accounts',
+    "django.contrib.sites",
+    'allauth',
+    'allauth.account',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -96,6 +100,11 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
@@ -116,3 +125,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 LOGIN_REDIRECT_URL = '/db'
 django_heroku.settings(locals())
+
+SITE_ID = 1
