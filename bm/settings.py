@@ -125,6 +125,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 LOGIN_REDIRECT_URL = '/db'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
-django_heroku.settings(locals())
-
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 SITE_ID = 1
+
+django_heroku.settings(locals())

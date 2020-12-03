@@ -19,14 +19,9 @@ def index(request):
 
 
 @login_required(login_url='/accounts/login/')
-def tradingview(request):
+def trading_view(request):
     graph = {"foo": 12.99, "bar": 18.99}
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, "traidingview.html", {"graph": graph})
+    return render(request, "trading_view.html", {"graph": graph})
 
 
 @login_required(login_url='/accounts/login/')
