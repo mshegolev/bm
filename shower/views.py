@@ -4,6 +4,7 @@ import requests
 import os
 from django.contrib.auth.decorators import login_required
 
+from stayer.tfi_wrapper import TfiWrapper
 from .models import Greeting
 
 
@@ -20,8 +21,11 @@ def index(request):
 
 @login_required(login_url='/accounts/login/')
 def trading_view(request):
-    graph = {"foo": 12.99, "bar": 18.99}
-    return render(request, "trading_view.html", {"graph": graph})
+    # graph = TfiWrapper().get_smoke_test()
+    graph = TfiWrapper().get_accounts()
+    print(graph)
+    return render(request, "trading_view.html", {"graph": graph.json()})
+
 
 
 @login_required(login_url='/accounts/login/')

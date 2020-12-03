@@ -11,9 +11,14 @@
         <ul>
 
             some graphics!
-            {% for row in graph %}
-                <li>{{ row.when }}{{ row }}</li>
-            {% endfor %}
+{#            <li class="deactivate">#}
+{#                <a href="/accounts/"><span class="glyphicon glyphicon-log-out"></span> Get accounts </a>#}
+{#            </li>#}
+            <li>{{ graph }}</li>
+
+{#            {% for row in graph %}#}
+{#                <li>{{ row.when }}{{ row }}</li>#}
+{#            {% endfor %}#}
 
             {#{% for greeting in greetings %}#}
             {#    <li>{{ greeting.when }}</li>#}

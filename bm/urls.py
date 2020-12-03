@@ -1,12 +1,11 @@
-from django.urls import path, include
+from django.urls import include
 
 from django.contrib import admin
 from django.contrib.auth import views
 from django.urls import path
+import shower.views
 
 admin.autodiscover()
-
-import shower.views
 
 # To add a new path, first import the app:
 # import blog
