@@ -6,7 +6,7 @@ from django.urls import path
 
 admin.autodiscover()
 
-import hello.views
+import shower.views
 
 # To add a new path, first import the app:
 # import blog
@@ -17,11 +17,11 @@ import hello.views
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
-    path("", hello.views.index, name="index"),
-    path("db/", hello.views.db, name="db"),
+    path("", shower.views.index, name="index"),
+    path("db/", shower.views.db, name="db"),
     path("admin/", admin.site.urls),
     # path('accounts/login/', views.LoginView.as_view(), name='login'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/logout/', views.LoginView.as_view(), name='logout'),
-    path('tradingview/', hello.views.trading_view, name="tradingview"),
+    path('tradingview/', shower.views.trading_view, name="tradingview"),
 ]

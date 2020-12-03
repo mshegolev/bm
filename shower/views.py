@@ -11,7 +11,7 @@ from .models import Greeting
 def index(request):
     if request.user.is_authenticated:
         times = int(os.environ.get('TIMES', 3))
-        message = "hello " * times
+        message = "shower " * times
     else:
         message = 'Пользователь не авторизован'
     return render(request, "index.html", {"message": message,
