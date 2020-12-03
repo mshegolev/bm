@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Python Getting Started on Heroku</title>
+    <title>bm</title>
+    <link rel="icon" sizes="180x180" href="static/logo_180x180.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -56,15 +57,21 @@
             <li class="deactivate">
                 <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
             </li>
-            <li class="deactivate">
-                <a href="/db"><span class="glyphicon glyphicon-folder-open"></span>   Report</a>
-            </li>
-            <li class="deactivate">
-                <a href="/"><span class="glyphicon glyphicon-usd"></span> Bank</a>
-            </li>
-            <li class="deactivate">
-                <a href="/accounts/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-            </li>
+            {% if user.is_authenticated %}
+                <li class="deactivate">
+                    <a href="/db"><span class="glyphicon glyphicon-folder-open"></span> Report</a>
+                </li>
+                <li class="deactivate">
+                    <a href="/"><span class="glyphicon glyphicon-usd"></span> Bank</a>
+                </li>
+                <li class="deactivate">
+                    <a href="/tradingview"><span class="glyphicon glyphicon-grain"></span> Trading view</a>
+                </li>
+                <li class="deactivate">
+                    <a href="/accounts/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                </li>
+            {% endif %}
+
         </ul>
     </div>
 </nav>

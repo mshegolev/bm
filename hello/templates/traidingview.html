@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+
+
+        <h2>Trading view</h2>
+
+
+        <ul>
+
+            some graphics!
+            {% for row in graph %}
+                <li>{{ row.when }}{{ row }}</li>
+            {% endfor %}
+
+            {#{% for greeting in greetings %}#}
+            {#    <li>{{ greeting.when }}</li>#}
+            {#{% endfor %}#}
+
+        </ul>
+
+    </div>
+
+{% endblock %}

@@ -124,6 +124,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
 LOGIN_REDIRECT_URL = '/db'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 django_heroku.settings(locals())
 
 SITE_ID = 1
