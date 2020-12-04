@@ -11,14 +11,17 @@
         <ul>
 
             some graphics!
-{#            <li class="deactivate">#}
-{#                <a href="/accounts/"><span class="glyphicon glyphicon-log-out"></span> Get accounts </a>#}
-{#            </li>#}
-            <li>{{ graph }}</li>
+            {#            <li class="deactivate">#}
+            {#                <a href="/accounts/"><span class="glyphicon glyphicon-log-out"></span> Get accounts </a>#}
+            {#            </li>#}
+            {#            <li>{{ graph }}</li>#}
+            {% block js %}
+                <script type="text/javascript" src={% static 'lightweight-charts.standalone.production.js' %}></script>
+            {% endblock %}
 
-{#            {% for row in graph %}#}
-{#                <li>{{ row.when }}{{ row }}</li>#}
-{#            {% endfor %}#}
+            {#            {% for row in graph %}#}
+            {#                <li>{{ row.when }}{{ row }}</li>#}
+            {#            {% endfor %}#}
 
             {#{% for greeting in greetings %}#}
             {#    <li>{{ greeting.when }}</li>#}
